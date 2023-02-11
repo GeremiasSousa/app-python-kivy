@@ -1,4 +1,4 @@
-from tkinter import *
+# from tkinter import *
 # class Application:
 #     def __init__(self, master=None):
 #         self.widget1 = Frame(master)
@@ -8,7 +8,19 @@ from tkinter import *
 # root = Tk()
 # Application(root)
 # root.mainloop()
+# widget = Tk()
+# widget.title("Meu primeiro app PY")
+# widget.mainloop()
 
-widget = Tk()
-widget.title("Meu primeiro app PY")
-widget.mainloop()
+from kivy.app import App
+from kivy.lang import Builder
+
+GUI = Builder.load_file("tela.kv")
+
+
+class Application(App):
+    def build(self):
+        return GUI
+ 
+    
+Application().run()
